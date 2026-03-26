@@ -8,13 +8,18 @@ import holidays
 import urllib.parse
 import math
 from deep_translator import GoogleTranslator
+from  dotenv  import load_dotenv
+import os
+
+load_dotenv()
+
+API_KEY = os.getenv("API_WEATHER_KEY")
+NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 
 
-
-API_KEY = "39a77652adf7043638f153373616a4f4"
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
-NEWS_API_KEY = "1a4d4aa72bd2499b89b7fe2469f96059"  # Replace with your NewsAPI key
+
 NEWS_BASE_URL = "https://newsapi.org/v2/top-headlines"
 
 
@@ -581,10 +586,45 @@ def handle_translate(query):
     return None
 
 
+def handle_open(query):
+    query = query.lower()
+
+    if "open" in query:
+        site = query.replace("open", "").strip()
+
+        if not site:
+            return {"message": "What do you want me to open?"}
+ # 🔥 FIX COMMON SITES
+        if "youtube" in site:
+            url = "https://www.youtube.com"
+        elif "google" in site:
+            url = "https://www.google.com"
+        elif "facebook" in site:
+            url = "https://www.facebook.com"
+    else:
+        if "." not in site:
+            site += ".com"
+
+        url = f"https://www.{site}"
+
+        return {
+            "message": f"Opening {site}",
+            "action": "open_url",
+            "url": url
+        }
+
+    return None
+
+
+
+
 # ---------------- MAIN BRAIN ----------------
  
 def run_jarvis(query):
-
+     # 🔹 OPEN HANDLER
+    response = handle_open(query)
+    if response:
+        return response
     # Games
     response = handle_quiz(query)
     if response:
@@ -635,5 +675,5 @@ def run_jarvis(query):
         return response
 
     # 🔥 FINAL FALLBACK → AI
-    return handle_ai(query)
+    return "sry dont understand"
 

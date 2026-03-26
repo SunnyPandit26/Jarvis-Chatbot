@@ -45,7 +45,10 @@ export default function Home() {
         updated.push({ role: "bot", text: data.text });
         return updated;
       });
-
+    // AUTO OPEN WEBSITE
+    if (data.action === "open_url") {
+      window.open(data.url, "_blank");
+    }
       // 🔊 Speak AFTER response comes
       if (isVoice) {
   speak(data.text);
