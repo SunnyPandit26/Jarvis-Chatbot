@@ -5,7 +5,6 @@ export default function ChatBox({ messages }) {
   const bottomRef = useRef(null);
   const chatRef = useRef(null);
 
-  // ✅ FIXED: Proper scroll behavior
   const scrollToBottom = useCallback(() => {
     if (bottomRef.current && chatRef.current) {
       chatRef.current.scrollTop = chatRef.current.scrollHeight;
@@ -24,6 +23,7 @@ export default function ChatBox({ messages }) {
           role={msg.role}
           text={msg.text}
           loading={msg.loading}
+          skipTyping={msg.skipTyping || false}  // ✅ FIXED: Proper prop passing
         />
       ))}
       <div ref={bottomRef} />

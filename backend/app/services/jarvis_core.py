@@ -17,7 +17,7 @@ from openai import OpenAI
 # Hugging Face AI Setup
 client = OpenAI(
     base_url="https://router.huggingface.co/v1",
-    api_key=os.environ["HF_TOKEN"],  # Set HF_sVspiXvoVnMFPwbndltDJUaFaNtMpWpILe in your .env
+    api_key=os.environ["HF_TOKEN"], 
 )
 
 API_KEY = "39a77652adf7043638f153373616a4f4"
@@ -139,7 +139,7 @@ def get_news(query=None, country="in", category=None):
             return f"⚠️ Error fetching news: {data.get('message', 'Unknown error')}"
         articles = data.get("articles", [])
         if not articles:
-            return "Sorry, no recent news found."
+            return "Soorry, no recent news found."
         headlines = []
         for i, article in enumerate(articles[:5], start=1):
             title = article.get("title", "No title")
