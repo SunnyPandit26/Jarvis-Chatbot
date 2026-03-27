@@ -1,32 +1,34 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import Message from "./Message";
 
 export default function ChatBox({ messages }) {
   const bottomRef = useRef(null);
-  const chatRef = useRef(null);
 
-  const scrollToBottom = useCallback(() => {
-    if (bottomRef.current && chatRef.current) {
-      chatRef.current.scrollTop = chatRef.current.scrollHeight;
-    }
+  // scroll on new message
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  // 🔥 scroll during typing
+  useEffect(() => {
+    const interval = setInterval(() => {
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+
+    return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages, scrollToBottom]);
-
   return (
-    <div ref={chatRef} className="space-y-4 flex flex-col h-full">
+    <div className="space-y-4">
       {messages.map((msg, index) => (
         <Message
           key={index}
           role={msg.role}
           text={msg.text}
           loading={msg.loading}
-          skipTyping={msg.skipTyping || false}  // ✅ FIXED: Proper prop passing
         />
       ))}
-      <div ref={bottomRef} />
+      <div ref={bottomRef}></div>
     </div>
   );
 }
