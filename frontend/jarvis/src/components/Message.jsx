@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 
-export default function Message({ role, text, loading }) {
+export default function Message({ role, text, loading, skipTyping = false }) {
   const isUser = role === "user";
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
     if (loading) return;
 
-    // ✅ user message = instant
-    if (isUser) {
+    // ✅ FIXED: INSTANT display for LOADED chats + user messages
+    if (isUser || skipTyping) {
       setDisplayText(text);
       return;
     }
 
-    // ✅ bot typing animation
+    // Typing animation ONLY for NEW bot messages
     let i = 0;
     setDisplayText("");
 
@@ -27,7 +27,7 @@ export default function Message({ role, text, loading }) {
     }, 15);
 
     return () => clearInterval(interval);
-  }, [text, loading, isUser]);
+  }, [text, loading, isUser, skipTyping]);  // ✅ All deps included
 
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
