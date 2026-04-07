@@ -1,0 +1,40 @@
+role,text
+bot,"Hello, I am Jarvis. How can I assist you?"
+user,quiz
+bot,"🎯 Quiz Time!
+
+How many legs does a spider have?"
+user,8
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,yes
+bot,"🎯 Next Question:
+
+What planet is known as the red planet?"
+user,bnana
+bot,"❌ Wrong! Correct answer was mars
+
+Do you want another question? (yes/no)"
+user,ye
+bot,Please answer with yes or no.
+user,yes
+bot,"🎯 Next Question:
+
+How many legs does a spider have?"
+user,8
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,yes
+bot,"🎯 Next Question:
+
+What planet is known as the red planet?"
+user,mars
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,yes
+bot,"🎯 Next Question:
+
+What planet is known as the red planet?"
