@@ -1,0 +1,104 @@
+role,text
+bot,"Hello, I am Jarvis. How can I assist you?"
+user,open chrome web store
+bot,Website closed. How can I help you now?
+user,open poki games
+bot,Website closed. How can I help you now?
+user,quiz
+bot,"🎯 Quiz Time!
+
+What is 6 x 7?"
+user,30
+bot,"❌ Wrong! Correct answer was 42
+
+Do you want another question? (yes/no)"
+user,yes
+bot,"🎯 Next Question:
+
+What shape is round?"
+user,circle
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,yes
+bot,"🎯 Next Question:
+
+What is 9 x 9?"
+user,81
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,yes
+bot,"🎯 Next Question:
+
+What is the smallest planet?"
+user,mercury
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,yes
+bot,"🎯 Next Question:
+
+What is 20 + 30?"
+user,50
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,yes
+bot,"🎯 Next Question:
+
+What is the opposite of fast?"
+user,slow
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,open chrome
+bot,Website closed. How can I help you now?
+user,open chrome web store
+bot,Website closed. How can I help you now?
+user,bye
+bot,Please answer with yes or no.
+user,exit
+bot,Please answer with yes or no.
+user,bye
+bot,Please answer with yes or no.
+user,no
+bot,👍 Okay! See you next time for quiz.
+user,bye
+bot,"👋 It was nice interacting with you. If you have any other questions or need assistance with something else, feel free to ask. Have a great day! 😊🌞"
+user,open pizza
+bot,Website closed. How can I help you now?
+user,open testing speed tester
+bot,Website closed. How can I help you now?
+user,open chrome web store
+bot,Website closed. How can I help you now?
+user,open speed test
+bot,Website closed. How can I help you now?
+user,open perplexity
+bot,Website closed. How can I help you now?
+user,search shahrukh
+bot,Website closed. How can I help you now?
+user,open perplexity
+bot,Website closed. How can I help you now?
+user,search perplexity
+bot,🔍 Searching Google for: perplexity
+user,open youtube
+bot,Website closed. How can I help you now?
+user,open wikipedia
+bot,Website closed. How can I help you now?
+user,open github
+bot,Website closed. How can I help you now?
+user,quiz
+bot,"🎯 Quiz Time!
+
+What is 20 + 30?"
+user,50
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,no
+bot,👍 Okay! See you next time for quiz.
+user,open runway
+bot,Website closed. How can I help you now?
+user,search runway
+bot,🔍 Searching Google for: runway
