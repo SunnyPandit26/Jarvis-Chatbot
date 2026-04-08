@@ -1,0 +1,38 @@
+role,text
+bot,"Hello, I am Jarvis. How can I assist you?"
+user,hi
+bot,Good evening! How can I assist you?
+user,who is modi
+bot,"📖 Narendra Modi
+
+Narendra Damodardas Modi is an Indian politician who has served as the prime minister of India since 2014. Modi was the chief minister of Gujarat from 2001 to 2014 and is the member of parliament (MP) for Varanasi. He is a member of the Bharatiya Janata Party (BJP) and of the Rashtriya Swayamsevak Sangh (RSS), a right-wing Hindutva paramilitary volunteer organisation. He is the longest-serving prime minister outside the Indian National Congress."
+user,lets play guess number
+bot,🎯 I have chosen a number between 1 and 50. Try to guess it! You have 5 chances
+user,45
+bot,Too high!
+user,40
+bot,Too high!
+user,20
+bot,Too low!
+user,30
+bot,Too high!
+user,25
+bot,"🎉 Correct! You guessed it right!
+
+Play again? (yes/no)"
+user,no
+bot,👍 Okay! See you next time.
+user,quiz game
+bot,"🎯 Quiz Time!
+
+What planet is known as the red planet?"
+user,mars
+bot,"✅ Correct!
+
+Do you want another question? (yes/no)"
+user,no
+bot,👍 Okay! See you next time for quiz.
+user,what is 4+5
+bot,Error fetching Wikipedia data
+user,4 plus 8
+bot,The result is 12

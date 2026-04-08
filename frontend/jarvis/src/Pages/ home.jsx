@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect , useRef } from "react";
 import ChatBox from "../components/ChatBox";
 import InputBox from "../components/InputBox";
+
 
 const API = "http://127.0.0.1:8000";
 
@@ -11,6 +12,17 @@ export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [hoveredChatId, setHoveredChatId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+
+  
+const chatRef = useRef(null);
+
+useEffect(() => {
+  if (chatRef.current) {
+    chatRef.current.scrollTop = chatRef.current.scrollHeight;
+  }
+}, [messages]);
+
 
   // ✅ ChatGPT-style delete modal
   const [deleteModal, setDeleteModal] = useState({ show: false, chatId: null });
@@ -362,7 +374,8 @@ export default function Home() {
           </div>
 
           <div className="flex-1 overflow-hidden flex flex-col">
-            <div className="flex-1 overflow-y-auto px-6 py-4 bg-slate-950/50">
+            <div  ref={chatRef}   // ✅ THIS is the real scroll container
+    className="flex-1 overflow-y-auto px-6 py-4 bg-slate-950/50">
               <ChatBox messages={messages} />
             </div>
             <InputBox onSend={sendMessage} disabled={isLoading || deleteModal.show} />
